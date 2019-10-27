@@ -1,5 +1,7 @@
 const readlineSync = require("readline-sync");
 
+console.log("");
+
 const HOURLY_WAGE = 12.5;
 
 console.log("Hourly Wage: " + HOURLY_WAGE);

@@ -1,5 +1,7 @@
 const readlineSync = require("readline-sync");
 
+console.log("");
+
 const HOMEWORK_WEIGHT = 0.15;
 const QUIZ_WEIGHT = 0.35;
 const TEST_WEIGHT = 0.5;

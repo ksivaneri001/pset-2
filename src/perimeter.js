@@ -1,5 +1,7 @@
 const readlineSync = require("readline-sync");
 
+console.log("");
+
 const INCH_TO_CM = 2.54;
 
 let width = readlineSync.question("Width: ");
