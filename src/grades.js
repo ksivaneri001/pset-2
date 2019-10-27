@@ -27,8 +27,6 @@ let test3 = readlineSync.question("");
 
 console.log("");
 
-
-
 let homeworkAverage = ((Number(homework1) + Number(homework2) + Number(homework3)) / 3) * HOMEWORK_WEIGHT;
 let quizAverage = ((Number(quiz1) + Number(quiz2) + Number(quiz3)) / 3) * QUIZ_WEIGHT;
 let testAverage = ((Number(test1) + Number(test2) + Number(test3)) / 3) * TEST_WEIGHT;
