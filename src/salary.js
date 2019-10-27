@@ -19,4 +19,4 @@ let eachCheckUnrounded = eachCheckBeforeTax - (eachCheckBeforeTax * totalTaxes);
 let eachCheck = eachCheckUnrounded.toLocaleString("en", {minimumFractionDigits:2, maximumFractionDigits:2});
 
 console.log("");
-console.log("You take-home pay each check will be $" + eachCheck + ".");
+console.log("Your take-home pay each check will be $" + eachCheck + ".");
