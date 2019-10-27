@@ -1,6 +1,8 @@
 const readlineSync = require("readline-sync");
 
-const CONTRIBUTION = 0.07;
+console.log("");
+
+const PRE_TAX = 0.07;
 const FEDERAL_INCOME_TAX = 0.157;
 const STATE_INCOME_TAX = 0.0447;
 const SOCIAL_SECURITY_TAX = 0.062;
@@ -8,9 +10,13 @@ const MEDICARE_TAX = 0.0145;
 
 let annualSalary = readlineSync.question("Annual salary: ");
 
-let annualSalaryAfter401K = annualSalary - (annualSalary * CONTRIBUTION);
+let eachCheckBeforePreTax = annualSalary / 24;
+let eachCheckBeforeTax = eachCheckBeforePreTax - (eachCheckBeforePreTax * PRE_TAX);
 
-let eachCheckBeforeTax = annualSalaryAfter401K / 24;
-let eachCheck = eachCheckBeforeTax - (eachCheckBeforeTax * FEDERAL_INCOME_TAX * STATE_INCOME_TAX * SOCIAL_SECURITY_TAX * MEDICARE_TAX);
+let totalTaxes = FEDERAL_INCOME_TAX + STATE_INCOME_TAX + SOCIAL_SECURITY_TAX + MEDICARE_TAX;
 
-console.log(eachCheck);
+let eachCheckUnrounded = eachCheckBeforeTax - (eachCheckBeforeTax * totalTaxes);
+let eachCheck = eachCheckUnrounded.toLocaleString("en", {minimumFractionDigits:2, maximumFractionDigits:2});
+
+console.log("");
+console.log("You take-home pay each check will be $" + eachCheck + ".");
